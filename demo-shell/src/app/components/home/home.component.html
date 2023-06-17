@@ -1,12 +1,134 @@
-<header class="app-home-background">
-    <div class="app-home-section ad">
-        <div class="app-home-headline">
-            <h1 class="mat-h1">ADF</h1>
-            <h2>{{ 'APP.HOME.TITLE' | translate}}</h2>
-        </div>
-
-        <div class="app-home-start">
-            <a mat-raised-button color="primary" class="app-home-docs-button" href="https://github.com/Alfresco/alfresco-ng2-components/tree/master/docs">{{ 'APP.HOME.DOCUMENTATION' | translate}}</a>
-        </div>
+<div style="z-index:{{zindex}};position:fixed;right:100px;top:60px;height:400px;width:400px;">
+    <adf-alfresco-viewer 
+    [(showViewer)]="showViewer"
+    [overlayMode]="false"
+    [nodeId]="nodeId">
+    </adf-alfresco-viewer>
+  
     </div>
-</header>
+  
+  <header class="app-home-background">
+      <div class="app-home-section ad">
+        <div ><h1 class="mat-h1" style="float:left">COMMON DOCS</h1></div>
+          <div class="app-home-headline">
+              <!-- <h1 class="mat-h1">ADF DESKTOP</h1> -->
+              <!-- <h3><p>PLEASE NOTE: THE MASTER LIST OF CONTROLLED DOCUMENTS IS FOR MOFE DOCUMENTS ONLY</p></h3> -->
+              <!--h2>{{ 'APP.HOME.TITLE' | translate}}</h2>-->
+  
+              <!-- added by Rob Wilds below-->
+  
+  <p></p>
+  <mat-accordion multi>
+    <div class="example-action-buttons">
+      <button mat-button (click)="accordion.openAll()">Expand All</button>
+      <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+    </div>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <img style="max-width: 200px;" src="./assets/images/train.png">
+          <mat-panel-title>
+            DRAWINGS
+          </mat-panel-title>
+          <mat-panel-description (click)="routeToFolder('drawings')">
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="app-content-node-selector-demo-basic-table">
+          <adf-document-list
+      currentFolderId="9ceffb48-0cc0-4341-8720-e16d21166005"
+      (preview)="showPreview($event)"
+      ></adf-document-list>
+      </div>
+      </mat-expansion-panel>
+  
+      <p></p>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <img style="max-width: 200px;" src="./assets/images/busses.png">
+          <mat-panel-title>
+            EQUIPMENT INSTRUCTIONS
+          </mat-panel-title>
+          <mat-panel-description (click)="routeToFolder('eq')">
+  
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <adf-document-list
+      currentFolderId="0a9f912f-fba4-480d-9ee2-c4f2e894ccf8"
+      (preview)="showPreview($event)"
+      ></adf-document-list>
+      </mat-expansion-panel>
+  
+  <p></p>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false" hideToggle>
+        <mat-expansion-panel-header>
+          <img style="max-width: 200px;" src="./assets/images/rail.png">
+          <mat-panel-title>
+            AIR BRAKES
+          </mat-panel-title>
+          <mat-panel-description (click)="routeToFolder('airbrakes')"></mat-panel-description>
+        </mat-expansion-panel-header>
+        <adf-document-list
+      currentFolderId="7d5cb795-9ba5-40cb-97f9-6e93b3e80406"
+      (preview)="showPreview($event)"
+      ></adf-document-list>
+        
+      </mat-expansion-panel>
+  
+      <p></p>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false" hideToggle>
+        <mat-expansion-panel-header>
+          <img style="max-width: 200px;" src="./assets/images/rail.png">
+          <mat-panel-title>
+            CUSTOM DB SEARCH
+          </mat-panel-title>
+          <mat-panel-description (click)="routeToFolder('dbsearch')"></mat-panel-description>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <!--end add by Rob Wilds-->
+          </div>
+  
+          <!-- <div class="app-home-start">
+              <a mat-raised-button color="primary" class="app-home-docs-button" href="https://github.com/Alfresco/alfresco-ng2-components/tree/master/docs">{{ 'APP.HOME.DOCUMENTATION' | translate}}</a>
+          </div> -->
+  
+          <!--h1 class="mat-h1" (click)="routeToFolder('search')">CLICK HERE FOR ADVANCED SEARCH </h1-->
+      </div>
+      <p></p>
+      <div><h1 class="mat-h1">FAVORITES</h1></div>
+      
+  <adf-document-list 
+  
+      [currentFolderId]="'-favorites-'"
+      [contextMenuActions]="true"
+      [contentActions]="true"
+      [maxItems]="5"
+      [locationFormat]="//files"
+      [maxItems]="5"
+      [selectionMode]="null"
+      (preview)="showFile($event)"
+      ></adf-document-list>
+  <!--   (preview)="showFile($event)"   -->
+      <p></p>
+  <div><h1 class="mat-h1">PROCESS SERVICES APPS</h1></div>
+  <adf-apps
+      (appClick)="onAppClicked($event)"
+      [layoutType]="'GRID'">
+  </adf-apps>
+  <!--comment-->
+  <div><h1 class="mat-h1">MY TASKS</h1></div>
+  
+  <adf-tasklist 
+      (rowClick)="taskRowClick()"
+      [state]="'open'" 
+      [assignment]="'assignee'"
+      [taskId]="taskId">
+  </adf-tasklist>
+  
+  
+  
+  </header>
+  
+  
+  
