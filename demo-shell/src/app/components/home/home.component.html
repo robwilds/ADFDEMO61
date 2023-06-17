@@ -11,12 +11,6 @@
       <div class="app-home-section ad">
         <div ><h1 class="mat-h1" style="float:left">COMMON DOCS</h1></div>
           <div class="app-home-headline">
-              <!-- <h1 class="mat-h1">ADF DESKTOP</h1> -->
-              <!-- <h3><p>PLEASE NOTE: THE MASTER LIST OF CONTROLLED DOCUMENTS IS FOR MOFE DOCUMENTS ONLY</p></h3> -->
-              <!--h2>{{ 'APP.HOME.TITLE' | translate}}</h2>-->
-  
-              <!-- added by Rob Wilds below-->
-  
   <p></p>
   <mat-accordion multi>
     <div class="example-action-buttons">
@@ -39,7 +33,6 @@
       ></adf-document-list>
       </div>
       </mat-expansion-panel>
-  
       <p></p>
       <mat-expansion-panel hideToggle>
         <mat-expansion-panel-header>
@@ -56,7 +49,6 @@
       (preview)="showPreview($event)"
       ></adf-document-list>
       </mat-expansion-panel>
-  
   <p></p>
       <mat-expansion-panel (opened)="panelOpenState = true"
                            (closed)="panelOpenState = false" hideToggle>
@@ -80,13 +72,12 @@
         <mat-expansion-panel-header>
           <img style="max-width: 200px;" src="./assets/images/rail.png">
           <mat-panel-title>
-            CUSTOM DB SEARCH
+            REST API demo - cat facts
           </mat-panel-title>
           <mat-panel-description (click)="routeToFolder('dbsearch')"></mat-panel-description>
         </mat-expansion-panel-header>
       </mat-expansion-panel>
     </mat-accordion>
-    <!--end add by Rob Wilds-->
           </div>
   
           <!-- <div class="app-home-start">
@@ -99,7 +90,6 @@
       <div><h1 class="mat-h1">FAVORITES</h1></div>
       
   <adf-document-list 
-  
       [currentFolderId]="'-favorites-'"
       [contextMenuActions]="true"
       [contentActions]="true"
