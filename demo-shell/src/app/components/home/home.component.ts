@@ -24,6 +24,7 @@ import { ContentNodeDialogService, UploadService, DiscoveryApiService,RowFilter 
 import { AlfrescoApiService, AppConfigService } from '@alfresco/adf-core';
 import { SitePaging, SiteEntry, MinimalNodeEntryEntity, Node } from '@alfresco/js-api';
 import { AppDefinitionRepresentationModel,TaskAttachmentListComponent,TaskUploadService } from '@alfresco/adf-process-services';
+//import { Dbsearch2Component } from '../dbsearch2/dbsearch2.component';
 
 export function taskUploadServiceFactory(api: AlfrescoApiService, config: AppConfigService, discoveryApiService: DiscoveryApiService) {
         return new TaskUploadService(api, config, discoveryApiService);
@@ -54,7 +55,7 @@ export class HomeComponent  {
 
     nodeId: string;
     zindex = "-1";
-   
+
     @Input()
     taskId: string;
     appId: number;
@@ -70,7 +71,7 @@ export class HomeComponent  {
     customSideGuid = '';
     customSideTitle = '';
     actualPageSize = 2;
-    
+
     rowFilterFunction: RowFilter = null;
     excludeSiteContentList: string[] = ContentNodeDialogService.nonDocumentSiteContent;
     customImageResolver: any = null;

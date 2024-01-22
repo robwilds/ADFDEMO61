@@ -1,4 +1,12 @@
 # Alfresco Application Development Framework (ADF)
+## Modifications
+
+This build has a custom landing page (home component) and custom search filters for CBA.
+
+Change the proxy.conf.json file to point to your alfresco instance and be sure to load the CBA aspect.  The zip of the model is at the root of this project
+
+
+
 
 ## Introduction
 

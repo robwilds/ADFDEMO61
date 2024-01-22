@@ -37,7 +37,7 @@ export class SearchBarComponent {
      */
     onSearchSubmit(event: KeyboardEvent) {
         const value = (event.target as HTMLInputElement).value;
-        this.router.navigate(['/search', {
+        this.router.navigate(['/search-filter-chips', {
             q: value
         }]);
     }

@@ -1,12 +1,12 @@
 <div style="z-index:{{zindex}};position:fixed;right:100px;top:60px;height:400px;width:400px;">
-    <adf-alfresco-viewer 
+    <adf-alfresco-viewer
     [(showViewer)]="showViewer"
     [overlayMode]="false"
     [nodeId]="nodeId">
     </adf-alfresco-viewer>
-  
+
     </div>
-  
+
   <header class="app-home-background">
       <div class="app-home-section ad">
         <div ><h1 class="mat-h1" style="float:left">COMMON DOCS</h1></div>
@@ -21,14 +21,14 @@
         <mat-expansion-panel-header>
           <img style="max-width: 200px;" src="./assets/images/train.png">
           <mat-panel-title>
-            DRAWINGS
+            AGENCY FILES
           </mat-panel-title>
           <mat-panel-description (click)="routeToFolder('drawings')">
           </mat-panel-description>
         </mat-expansion-panel-header>
         <div class="app-content-node-selector-demo-basic-table">
           <adf-document-list
-      currentFolderId="9ceffb48-0cc0-4341-8720-e16d21166005"
+      currentFolderId="8bb36efb-c26d-4d2b-9199-ab6922f53c28"
       (preview)="showPreview($event)"
       ></adf-document-list>
       </div>
@@ -38,14 +38,14 @@
         <mat-expansion-panel-header>
           <img style="max-width: 200px;" src="./assets/images/busses.png">
           <mat-panel-title>
-            EQUIPMENT INSTRUCTIONS
+            AI PROCESSED
           </mat-panel-title>
           <mat-panel-description (click)="routeToFolder('eq')">
-  
+
           </mat-panel-description>
         </mat-expansion-panel-header>
         <adf-document-list
-      currentFolderId="0a9f912f-fba4-480d-9ee2-c4f2e894ccf8"
+      currentFolderId="366728c7-6bd3-40f6-b867-cc0b716ee1b4"
       (preview)="showPreview($event)"
       ></adf-document-list>
       </mat-expansion-panel>
@@ -55,17 +55,17 @@
         <mat-expansion-panel-header>
           <img style="max-width: 200px;" src="./assets/images/rail.png">
           <mat-panel-title>
-            AIR BRAKES
+            PRESENTATIONS
           </mat-panel-title>
           <mat-panel-description (click)="routeToFolder('airbrakes')"></mat-panel-description>
         </mat-expansion-panel-header>
         <adf-document-list
-      currentFolderId="7d5cb795-9ba5-40cb-97f9-6e93b3e80406"
+      currentFolderId="38745585-816a-403f-8005-0a55c0aec813"
       (preview)="showPreview($event)"
       ></adf-document-list>
-        
+
       </mat-expansion-panel>
-  
+
       <p></p>
       <mat-expansion-panel (opened)="panelOpenState = true"
                            (closed)="panelOpenState = false" hideToggle>
@@ -75,21 +75,24 @@
             REST API demo - cat facts
           </mat-panel-title>
           <mat-panel-description (click)="routeToFolder('dbsearch')"></mat-panel-description>
+
         </mat-expansion-panel-header>
+        <dbsearch2></dbsearch2>
       </mat-expansion-panel>
+
     </mat-accordion>
           </div>
-  
+
           <!-- <div class="app-home-start">
               <a mat-raised-button color="primary" class="app-home-docs-button" href="https://github.com/Alfresco/alfresco-ng2-components/tree/master/docs">{{ 'APP.HOME.DOCUMENTATION' | translate}}</a>
           </div> -->
-  
+
           <!--h1 class="mat-h1" (click)="routeToFolder('search')">CLICK HERE FOR ADVANCED SEARCH </h1-->
       </div>
       <p></p>
       <div><h1 class="mat-h1">FAVORITES</h1></div>
-      
-  <adf-document-list 
+
+  <adf-document-list
       [currentFolderId]="'-favorites-'"
       [contextMenuActions]="true"
       [contentActions]="true"
@@ -108,17 +111,16 @@
   </adf-apps>
   <!--comment-->
   <div><h1 class="mat-h1">MY TASKS</h1></div>
-  
-  <adf-tasklist 
+
+  <adf-tasklist
       (rowClick)="taskRowClick()"
-      [state]="'open'" 
+      [state]="'open'"
       [assignment]="'assignee'"
       [taskId]="taskId">
   </adf-tasklist>
-  
-  
-  
+
+
+
   </header>
-  
-  
-  
+
+

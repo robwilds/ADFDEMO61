@@ -261,6 +261,65 @@
         }
       },
       {
+        "id": "CBAentrynumber",
+        "name": "CBA Entry Number",
+        "enabled": true,
+        "expanded": true,
+        "component": {
+          "selector": "text",
+          "settings": {
+            "pattern": "cba:entryNumber:'(.*?)'",
+            "field": "cba:entryNumber",
+            "placeholder": "Enter the Entry Number"
+          }
+        }
+      },
+      {
+        "id": "CBAclassification",
+        "name": "CBA Classification",
+        "enabled": true,
+        "expanded": true,
+        "component": {
+          "selector": "text",
+          "settings": {
+            "pattern": "cba:classification:'(.*?)'",
+            "field": "cba:classification",
+            "placeholder": "class number here"
+          }
+        }
+      },{
+        "id": "CBAentryDate",
+        "name": "CBA Entry Date",
+        "enabled": true,
+        "expanded": true,
+        "component": {
+          "selector": "date-range",
+          "settings": {
+            "pattern": "cba:entryDate:'(.*?)'",
+            "field": "cba:entryDate",
+            "placeholder": "Enter the Entry Date"
+          }
+        }
+      },
+      {
+        "id": "cbaBroker",
+        "name": "CBA Broker Info",
+        "enabled": true,
+        "component": {
+          "selector": "check-list",
+          "settings": {
+            "pageSize": 5,
+            "operator": "OR",
+            "options": [
+              {
+                "name": "CBA Broker Info",
+                "value": "ASPECT:'cba:baseBrokerInfo'"
+              }
+            ]
+          }
+        }
+      },
+      {
         "id": "checkList",
         "name": "Check List",
         "enabled": true,
@@ -277,6 +336,10 @@
               {
                 "name": "Document",
                 "value": "TYPE:'cm:content'"
+              },
+              {
+                "name": "CBA Broker Info",
+                "value": "ASPECT:'cba:baseBrokerInfo'"
               }
             ]
           }
@@ -672,6 +735,26 @@
         }
       },
       {
+        "id": "cba",
+        "name": "cba",
+        "columnKey": "name",
+        "enabled": true,
+        "component": {
+          "selector": "check-list",
+          "settings": {
+            "pageSize": 5,
+            "allowUpdateOnChange": true,
+            "operator": "OR",
+            "options": [
+              {
+                "name": "CBA Broker Info",
+                "value": "+ASPECT:'cba:baseBrokerInfo'"
+              }
+            ]
+          }
+        }
+      },
+      {
         "id": "checkList",
         "name": "SEARCH.SEARCH_HEADER.FILTERS.TYPE.TITLE",
         "columnKey": "$thumbnail",
@@ -690,6 +773,10 @@
               {
                 "name": "SEARCH.SEARCH_HEADER.FILTERS.TYPE.DOCUMENT",
                 "value": "TYPE:'cm:content'"
+              },
+              {
+                "name": "CBA Broker Info",
+                "value": "ASPECT:'cba:baseBrokerInfo'"
               }
             ]
           }
